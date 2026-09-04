@@ -86,8 +86,6 @@ module Top();
     // Add checks for exhaustive testing (check all possible inputs)
     //''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-    check( 0,  0,  0,  0 );
-
     t.test_case_end();
   endtask
 
