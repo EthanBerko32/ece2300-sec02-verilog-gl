@@ -11,7 +11,7 @@ module Top();
   // Setup
   //----------------------------------------------------------------------
 
-  ece2300_CombinationalTestUtils t();
+  TestUtils t();
 
   //----------------------------------------------------------------------
   // Instantiate design under test
@@ -44,6 +44,7 @@ module Top();
     input logic out_
   );
     if ( !t.failed ) begin
+      t.num_checks += 1;
 
       in0 = in0_;
       in1 = in1_;
@@ -111,7 +112,7 @@ module Top();
   //----------------------------------------------------------------------
 
   initial begin
-    t.test_bench_begin( `__FILE__ );
+    t.test_bench_begin();
 
     if ((t.n <= 0) || (t.n == 1)) test_case_1_basic();
     if ((t.n <= 0) || (t.n == 2)) test_case_2_exhaustive();
